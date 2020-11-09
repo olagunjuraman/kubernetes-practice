@@ -5,6 +5,9 @@ services:
 before_install:
   - docker build -t olagunju/react-test -f ./client/Dockerfile.dev ./client
 
+script:
+  - docker run olagunju/react-test npm test -- --coverage
+
 after_success:
   - docker build -t olagunju/multi-client ./client
   - docker build -t olagunju/multi-nginx ./nginx
