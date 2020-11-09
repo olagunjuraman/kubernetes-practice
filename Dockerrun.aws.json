@@ -16,7 +16,7 @@
       "memory": 128
     },
     {
-      "name": "serevr",
+      "name": "server",
       "image": "olagunju/multi-server",
       "hostname": "server",
       "essentail": false,
