@@ -5,19 +5,22 @@
       "name": "client",
       "image": "olagunju/multi-client",
       "hostname": "client",
-      "essentail": false
+      "essentail": false,
+      "memory": 128
     },
     {
       "name": "nginx",
       "image": "olagunju/multi-nginx",
       "hostname": "nginx",
-      "essentail": true
+      "essentail": true,
+      "memory": 128
     },
     {
       "name": "serevr",
       "image": "olagunju/multi-server",
       "hostname": "server",
-      "essentail": false
+      "essentail": false,
+      "memory": 128
     },
     {
       "name": "worker",
@@ -30,7 +33,8 @@
           "containerPort": 80
         }
       ],
-      "links": ["client", "server"]
+      "links": ["client", "server"],
+      "memory": 128
     }
   ]
 }
