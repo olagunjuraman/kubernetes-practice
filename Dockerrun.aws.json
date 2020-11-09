@@ -1,0 +1,36 @@
+{
+  "AWSEBDockerrunVersion": 2,
+  "containerDefinitions": [
+    {
+      "name": "client",
+      "image": "olagunju/multi-client",
+      "hostname": "client",
+      "essentail": false
+    },
+    {
+      "name": "nginx",
+      "image": "olagunju/multi-nginx",
+      "hostname": "nginx",
+      "essentail": true
+    },
+    {
+      "name": "serevr",
+      "image": "olagunju/multi-server",
+      "hostname": "server",
+      "essentail": false
+    },
+    {
+      "name": "worker",
+      "image": "olagunju/multi-worker",
+      "hostname": "worker",
+      "essentail": false,
+      "portsMappings": [
+        {
+          "hostPort": 80,
+          "containerPort": 80
+        }
+      ],
+      "links": ["client", "server"]
+    }
+  ]
+}
