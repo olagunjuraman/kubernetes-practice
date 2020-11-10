@@ -21,6 +21,7 @@ after_success:
   - docker push olagunju/multi-worker
 
 deploy:
+  edge: true
   provider: elasticbeanstalk
   region: eu-west-1
   app: multi-docker
